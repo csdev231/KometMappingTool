@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "Komet Sales Product Mapping Tool",
+    "version": "1.0",
+    "description": "Create products directly from the k2k 'staging area' page of Komet Sales",
+    "permissions": ["activeTab", "storage", "notifications", "activeTab"],
+    "content_scripts": [
+      {
+        "matches": ["*://*.kometsales.com/vendor-availability/staging-area.do*"],
+        "js": ["KometMappingTool.js"]
+      }
+    ],
+    "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html",
+      "default_title": "Run Script"
+    },
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    }
+  }
+  
